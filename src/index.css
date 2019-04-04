@@ -212,6 +212,7 @@
 .react-kindness-panel__message {
   margin: 0;
   color: white;
+  text-align: center;
 }
 .react-kindness-panel__bottombar {
   padding: 10px;
@@ -274,6 +275,11 @@
   font-family: 'Technical forest', sans-serif;
   color: #ecedf1;
   font-size: 12px;
+  text-decoration: none;
+}
+
+.react-kindness-button:hover {
+  background-color: black;
   text-decoration: none;
 }
 
