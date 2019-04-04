@@ -74,6 +74,15 @@
   opacity: 0;
 }
 
+.react-kindness--enter-done,
+.react-kindness--enter {
+  display: block !important;
+}
+
+.react-kindness {
+  display: none;
+}
+
 /*******************************************************************************
  * Spot
  */
