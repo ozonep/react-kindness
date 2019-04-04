@@ -9,12 +9,19 @@ import {
   panelTitleClassName,
 } from './classNames';
 import { KindnessPanelContentArgs } from './types';
+import './Button.css';
+
+
+function MainButton({onClick, text, ref}) {
+  return (
+    <a href="#" className="button__data_science" onClick={onClick} ref={ref}>{text}</a>
+  );
+}
 
 export default class KindnessPanelContent extends React.Component<KindnessPanelContentArgs> {
   constructor(props: KindnessPanelContentArgs) {
     super(props);
     this.nextRef = React.createRef();
-
     const { transitionEmitter } = props;
     transitionEmitter.on('onEntered', this.onEntered);
   }
@@ -27,7 +34,7 @@ export default class KindnessPanelContent extends React.Component<KindnessPanelC
   onEntered = () => {
     if (!this.nextRef.current) return;
     this.nextRef.current.focus();
-  }
+  };
 
   render() {
     const {
@@ -69,40 +76,14 @@ export default class KindnessPanelContent extends React.Component<KindnessPanelC
           </div>
         </div>
         <div className={`${panelClassName}__bottombar`}>
-          {
-            goNext && (
-              <button type="button" onClick={skip}>
-                Skip
-              </button>
-            )
-          }
-
+          {goNext && <MainButton text="Skip" onClick={skip} />}
           <span className={`${panelClassName}__spacer`}>
             {''}
           </span>
-          <button
-            type="button"
-            onClick={goPrev}
-            {...(goPrev ? {} : { disabled: true })}
-          >
-            Prev
-          </button>
-          {
-            goNext ? (
-              <button type="button" onClick={goNext} ref={this.nextRef}>
-                Next
-              </button>
-            ) : (
-              <button type="button" onClick={skip} ref={this.nextRef}>
-                Done
-              </button>
-            )
-          }
+          <MainButton text="Prev" onClick={goPrev} />
+          {goNext ? <MainButton text="Next" onClick={goNext} ref={this.nextRef} /> : <MainButton text="Done" onClick={skip} ref={this.nextRef} />}
         </div>
-        <span
-          className={panelArrowClassName}
-          x-arrow="true"
-        >
+        <span className={panelArrowClassName} x-arrow="true">
           {' '}
         </span>
       </React.Fragment>
