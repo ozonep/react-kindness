@@ -9,7 +9,6 @@ import {
   panelTitleClassName,
 } from './classNames';
 import { KindnessPanelContentArgs } from './types';
-import './Button.css';
 
 
 function MainButton({onClick, text, ref}) {

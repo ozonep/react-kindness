@@ -252,3 +252,44 @@
 .react-kindness-panel .react-kindness-panel__arrow {
   border-color: #21252b;
 }
+
+
+/*Button design*/
+.react-kindness-button {
+  display: flex;
+  width: 120px;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 13px;
+  padding-left: 2px;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #333333;
+  border-radius: 5px;
+  background-color: #181b24;
+  opacity: 0.9;
+  font-family: 'Technical forest', sans-serif;
+  color: #ecedf1;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.react-kindness-button:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .react-kindness-button {
+    width: 21%;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 479px) {
+  .react-kindness-button {
+    width: 38%;
+    margin-right: 12px;
+  }
+}
