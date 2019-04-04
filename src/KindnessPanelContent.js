@@ -14,7 +14,7 @@ import './Button.css';
 
 function MainButton({onClick, text, ref}) {
   return (
-    <a href="#" className="button__data_science" onClick={onClick} ref={ref}>{text}</a>
+    <a href="#" className="react-kindness-button" onClick={onClick} ref={ref}>{text}</a>
   );
 }
 
